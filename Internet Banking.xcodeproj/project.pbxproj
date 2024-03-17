@@ -27,6 +27,10 @@
 		B8CC964B2BA6393F000FCEEA /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC964A2BA6393F000FCEEA /* BundleExtensions.swift */; };
 		B8CC964E2BA65643000FCEEA /* GetProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = B8CC964D2BA65643000FCEEA /* GetProducts.json */; };
 		B8CC96522BA65F30000FCEEA /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96512BA65F30000FCEEA /* ProductsInteractor.swift */; };
+		B8CC96562BA666F2000FCEEA /* ProductsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96552BA666F2000FCEEA /* ProductsInteractorTests.swift */; };
+		B8CC96592BA66797000FCEEA /* ProductsProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96582BA66797000FCEEA /* ProductsProviderMock.swift */; };
+		B8CC965E2BA66D1F000FCEEA /* NetworkMonitorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC965B2BA66C47000FCEEA /* NetworkMonitorAdapter.swift */; };
+		B8CC96622BA66D8C000FCEEA /* NetworkMonitorAdapterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96612BA66D8C000FCEEA /* NetworkMonitorAdapterMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		B8CC964A2BA6393F000FCEEA /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		B8CC964D2BA65643000FCEEA /* GetProducts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetProducts.json; sourceTree = "<group>"; };
 		B8CC96512BA65F30000FCEEA /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
+		B8CC96552BA666F2000FCEEA /* ProductsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractorTests.swift; sourceTree = "<group>"; };
+		B8CC96582BA66797000FCEEA /* ProductsProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsProviderMock.swift; sourceTree = "<group>"; };
+		B8CC965B2BA66C47000FCEEA /* NetworkMonitorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorAdapter.swift; sourceTree = "<group>"; };
+		B8CC96612BA66D8C000FCEEA /* NetworkMonitorAdapterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorAdapterMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,7 @@
 		B8CC96002BA620AC000FCEEA /* Internet Banking */ = {
 			isa = PBXGroup;
 			children = (
+				B8CC965A2BA66C28000FCEEA /* Infrastructure */,
 				B8CC964F2BA65F16000FCEEA /* Modules */,
 				B8CC96492BA6392E000FCEEA /* Extensions */,
 				B8CC96382BA62D25000FCEEA /* Model */,
@@ -139,7 +148,8 @@
 		B8CC96172BA620AD000FCEEA /* Internet BankingTests */ = {
 			isa = PBXGroup;
 			children = (
-				B8CC964C2BA6562E000FCEEA /* Json */,
+				B8CC965F2BA66D70000FCEEA /* Infrastructure */,
+				B8CC96532BA666CC000FCEEA /* Modules */,
 				B8CC96422BA633CE000FCEEA /* Data */,
 				B8CC96182BA620AD000FCEEA /* Internet_BankingTests.swift */,
 			);
@@ -202,7 +212,8 @@
 		B8CC96422BA633CE000FCEEA /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B8CC96462BA63414000FCEEA /* Mocks */,
+				B8CC964C2BA6562E000FCEEA /* Json */,
+				B8CC96462BA63414000FCEEA /* MockURL */,
 				B8CC96432BA633D6000FCEEA /* Providers */,
 			);
 			path = Data;
@@ -211,17 +222,18 @@
 		B8CC96432BA633D6000FCEEA /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				B8CC96572BA66783000FCEEA /* Mocks */,
 				B8CC96442BA633E5000FCEEA /* ProductsProviderTests.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
 		};
-		B8CC96462BA63414000FCEEA /* Mocks */ = {
+		B8CC96462BA63414000FCEEA /* MockURL */ = {
 			isa = PBXGroup;
 			children = (
 				B8CC96472BA636C1000FCEEA /* MockURLProtocol.swift */,
 			);
-			path = Mocks;
+			path = MockURL;
 			sourceTree = "<group>";
 		};
 		B8CC96492BA6392E000FCEEA /* Extensions */ = {
@@ -254,6 +266,46 @@
 				B8CC96512BA65F30000FCEEA /* ProductsInteractor.swift */,
 			);
 			path = Products;
+			sourceTree = "<group>";
+		};
+		B8CC96532BA666CC000FCEEA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B8CC96542BA666D3000FCEEA /* Products */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B8CC96542BA666D3000FCEEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8CC96552BA666F2000FCEEA /* ProductsInteractorTests.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		B8CC96572BA66783000FCEEA /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B8CC96582BA66797000FCEEA /* ProductsProviderMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B8CC965A2BA66C28000FCEEA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				B8CC965B2BA66C47000FCEEA /* NetworkMonitorAdapter.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		B8CC965F2BA66D70000FCEEA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				B8CC96612BA66D8C000FCEEA /* NetworkMonitorAdapterMock.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8CC96062BA620AC000FCEEA /* ViewController.swift in Sources */,
+				B8CC965E2BA66D1F000FCEEA /* NetworkMonitorAdapter.swift in Sources */,
 				B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */,
 				B8CC96412BA62EC1000FCEEA /* CashEntity.swift in Sources */,
 				B8CC963D2BA62E93000FCEEA /* SpotlightItemEntity.swift in Sources */,
@@ -407,7 +460,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8CC96482BA636C1000FCEEA /* MockURLProtocol.swift in Sources */,
+				B8CC96622BA66D8C000FCEEA /* NetworkMonitorAdapterMock.swift in Sources */,
+				B8CC96592BA66797000FCEEA /* ProductsProviderMock.swift in Sources */,
 				B8CC96452BA633E5000FCEEA /* ProductsProviderTests.swift in Sources */,
+				B8CC96562BA666F2000FCEEA /* ProductsInteractorTests.swift in Sources */,
 				B8CC96192BA620AD000FCEEA /* Internet_BankingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

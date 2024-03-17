@@ -17,11 +17,11 @@ enum ProductsEndPoints: String {
 }
 
 protocol ProductsProviderProtocol {
-  func fetchProducts(successCallback: @escaping (ProductsResponseEntity) -> Void, failureCallback: @escaping (Error) -> Void)
+  func fetchProducts(successCallback: @escaping (ProductsResponseEntity) -> Void, failureCallback: @escaping (ProductsErrors) -> Void)
 }
 
 class ProductsProvider: URLSessionClient, ProductsProviderProtocol {
-  func fetchProducts(successCallback: @escaping (ProductsResponseEntity) -> Void, failureCallback: @escaping (Error) -> Void) {
+  func fetchProducts(successCallback: @escaping (ProductsResponseEntity) -> Void, failureCallback: @escaping (ProductsErrors) -> Void) {
     let sessionRequest = URLSessionRequestParameters(path: "/sandbox/products", method: .get)
     
     request(parameters: sessionRequest) { (result) in
@@ -33,7 +33,7 @@ class ProductsProvider: URLSessionClient, ProductsProviderProtocol {
         } catch {
           failureCallback(ProductsErrors.failedToParseProducts)
         }
-      case .failure(let error):
+      case .failure(_):
         failureCallback(ProductsErrors.failedToFetch)
       }
     }
