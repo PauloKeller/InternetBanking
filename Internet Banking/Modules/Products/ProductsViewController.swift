@@ -41,7 +41,7 @@ class ProductsViewController: UIViewController {
       header.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
       header.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
       header.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-      header.heightAnchor.constraint(equalToConstant: 40)
+      header.heightAnchor.constraint(equalToConstant: 60)
     ])
     
     NSLayoutConstraint.activate([
