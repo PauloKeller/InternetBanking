@@ -9,25 +9,6 @@ import XCTest
 import Network
 @testable import Internet_Banking
 
-class MockProductsInteractorDelegate: ProductsInteractorDelegate {
-  var isSuccessFetchProductsCalled = false
-  var isFailureFetchProductsCalled = false
-  var isNoInternetConnectionCalled = false
-  
-  func successFetchProducts(data: ProductsResponseEntity) {
-    isSuccessFetchProductsCalled = true
-  }
-  
-  func failureFetchProducts() {
-    isFailureFetchProductsCalled = true
-  }
-  
-  func noInternetConnection() {
-    isNoInternetConnectionCalled = true
-  }
-}
-
-
 final class ProductsInteractorTests: XCTestCase {
   var sut: ProductsInteractor!
   var mockDelegate: MockProductsInteractorDelegate!
