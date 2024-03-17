@@ -14,7 +14,7 @@ class TopBannerTableViewCell: UITableViewCell {
   let collectionView: UICollectionView = {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
-    flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 20, height: 200)
+    flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 170)
     let view = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: flowLayout)
     view.register(SpotlightItemCollectionViewCell.self, forCellWithReuseIdentifier: SpotlightItemCollectionViewCell.indentifier)
     view.translatesAutoresizingMaskIntoConstraints = false

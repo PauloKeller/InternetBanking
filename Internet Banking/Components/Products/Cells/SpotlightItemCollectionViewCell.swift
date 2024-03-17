@@ -9,10 +9,9 @@ import UIKit
 class SpotlightItemCollectionViewCell: UICollectionViewCell {
   static let indentifier = "SpotlightItemCollectionViewCell"
   
-  let imageView: UIImageView = {
-    let view = UIImageView()
+  let bannerImage: BannerImage = {
+    let view = BannerImage(frame: .zero)
     view.image = UIImage(named: "placeholder")
-    view.contentMode = .scaleAspectFit
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
@@ -30,19 +29,19 @@ class SpotlightItemCollectionViewCell: UICollectionViewCell {
   }
   
   private func configureCell() {
-    contentView.addSubview(imageView)
+    contentView.addSubview(bannerImage)
     
     NSLayoutConstraint.activate([
-      imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-      imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+      bannerImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      bannerImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      bannerImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+      bannerImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
     ])
   }
   
   func configureData(spotlightItem: SpotlightItemEntity) {
     if let url = URL(string: spotlightItem.bannerURL) {
-      imageView.load(url: url)
+      bannerImage.load(url: url)
     }
   }
 }

@@ -8,9 +8,11 @@
 import UIKit
 
 class ProductsViewController: UIViewController {
+  let productsData = ["1", "2", "3"]
   
   let header: ProductsHeader = {
     let header = ProductsHeader(frame: .zero)
+    header.titleLabel.text = "Olá, Maria"
     header.translatesAutoresizingMaskIntoConstraints = false
     return header
   }()
@@ -18,6 +20,7 @@ class ProductsViewController: UIViewController {
   let tableView: UITableView = {
     let view = UITableView()
     view.register(TopBannerTableViewCell.self, forCellReuseIdentifier: TopBannerTableViewCell.identifier)
+    view.register(CenterBannerTableViewCell.self, forCellReuseIdentifier: CenterBannerTableViewCell.identifier)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
@@ -25,6 +28,7 @@ class ProductsViewController: UIViewController {
   private func viewConfiguration() {
     tableView.dataSource = self
     tableView.delegate = self
+    tableView.estimatedRowHeight = 150
     
     self.view.addSubview(header)
     self.view.addSubview(tableView)
@@ -59,19 +63,47 @@ extension ProductsViewController: UITableViewDelegate {
 
 extension ProductsViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return productsData.count
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 200
+    switch productsData[indexPath.row] {
+    case "1":
+      return 200
+    case "2":
+      return 100
+    case "3":
+      return 200
+    default:
+      return 0
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 10
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: TopBannerTableViewCell.identifier) as? TopBannerTableViewCell else {
+    switch productsData[indexPath.row] {
+    case "1":
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: TopBannerTableViewCell.identifier) as? TopBannerTableViewCell else {
+        return UITableViewCell()
+      }
+      
+      return cell
+    case "2":
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: CenterBannerTableViewCell.identifier) as? CenterBannerTableViewCell else {
+        return UITableViewCell()
+      }
+      
+      cell.configureData(cash: CashEntity(title: "mock title", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/cash_banner.png", description: "mock desc"))
+      
+      return cell
+    case "3":
+      return UITableViewCell()
+    default:
       return UITableViewCell()
     }
-    
-    return cell
   }
 }
 

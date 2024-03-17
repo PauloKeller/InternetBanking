@@ -20,6 +20,7 @@ final class ProductsHeader: UIView {
   
   let titleLabel: UILabel = {
     let label = UILabel()
+    label.font = .systemFont(ofSize: 24)
     label.text = "Place text here"
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -59,10 +60,5 @@ final class ProductsHeader: UIView {
       stackView.topAnchor.constraint(equalTo: self.topAnchor),
       stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
     ])
-  }
-  
-  func configureData(title: String, image: UIImage) {
-    self.titleLabel.text = title
-    self.imageView.image = image
   }
 }
