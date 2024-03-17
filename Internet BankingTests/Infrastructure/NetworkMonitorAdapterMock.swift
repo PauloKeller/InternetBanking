@@ -9,6 +9,14 @@ import Network
 @testable import Internet_Banking
 
 class NetworkMonitorAdapterMock: NetworkMonitorAdapterProtocol {
+  func pathUpdatehandler(completion: @escaping (NWPath.Status) -> Void) {
+    if hasInternetConnection {
+      completion(NWPath.Status.satisfied)
+    } else {
+      completion(NWPath.Status.requiresConnection)
+    }
+  }
+  
   var hasInternetConnection = true
   
   var status: NWPath.Status {

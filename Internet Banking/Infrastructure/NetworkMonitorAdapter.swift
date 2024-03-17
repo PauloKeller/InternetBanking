@@ -11,7 +11,7 @@ import Network
 protocol NetworkMonitorAdapterProtocol {
   var status: NWPath.Status { get }
   
-  func pathUpdatehandler(completion: @escaping (NWPath) -> Void)
+  func pathUpdatehandler(completion: @escaping (NWPath.Status) -> Void)
 }
 
 class NetworkMonitorAdapter: NetworkMonitorAdapterProtocol {
@@ -24,9 +24,9 @@ class NetworkMonitorAdapter: NetworkMonitorAdapterProtocol {
     monitor.start(queue: queue)
   }
   
-  func pathUpdatehandler(completion: @escaping (NWPath) -> Void) {
+  func pathUpdatehandler(completion: @escaping (NWPath.Status) -> Void) {
     monitor.pathUpdateHandler = { path in
-      completion(path)
+      completion(path.status)
     }
   }
 
