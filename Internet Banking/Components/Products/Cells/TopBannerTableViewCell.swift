@@ -9,22 +9,22 @@ import UIKit
 
 class TopBannerTableViewCell: UITableViewCell {
   static let identifier = "TopBannerTableViewCell"
-  var spotlightItems: [SpotlightItemEntity] = [SpotlightItemEntity(name: "Mock test", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/recharge_banner.png", description: "Mock desc")]
+  var items = [SpotlightItemEntity(name: "Mock test", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/recharge_banner.png", description: "Mock desc"),
+               SpotlightItemEntity(name: "Mock test", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/recharge_banner.png", description: "Mock desc")]
   
   let collectionView: UICollectionView = {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
     flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 170)
     let view = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: flowLayout)
-    view.register(SpotlightItemCollectionViewCell.self, forCellWithReuseIdentifier: SpotlightItemCollectionViewCell.indentifier)
+    view.register(SpotlightItemCollectionViewCell.self, forCellWithReuseIdentifier: SpotlightItemCollectionViewCell.identifier)
     view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = UIColor.cyan
     view.isPagingEnabled = true
     return view
   }()
   
-  func configureData(spotligthItem: [SpotlightItemEntity]) {
-    self.spotlightItems = spotligthItem
+  func configureData(items: [SpotlightItemEntity]) {
+    self.items = items
     
     collectionView.reloadData()
   }
@@ -68,16 +68,15 @@ extension TopBannerTableViewCell: UICollectionViewDelegate {
 
 extension TopBannerTableViewCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return spotlightItems.count
+    return items.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpotlightItemCollectionViewCell.indentifier, for: indexPath) as? SpotlightItemCollectionViewCell else {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpotlightItemCollectionViewCell.identifier, for: indexPath) as? SpotlightItemCollectionViewCell else {
       return UICollectionViewCell()
     }
     
-    cell.configureData(spotlightItem: spotlightItems[indexPath.row])
-    cell.backgroundColor = UIColor.green
+    cell.configureData(item: items[indexPath.row])
     return cell
   }
 }

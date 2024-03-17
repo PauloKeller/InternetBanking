@@ -15,7 +15,7 @@
 		B88F17B02BA74031001105F9 /* SpotlightItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17AF2BA74031001105F9 /* SpotlightItemCollectionViewCell.swift */; };
 		B88F17B22BA74419001105F9 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17B12BA74419001105F9 /* UIImageExtensions.swift */; };
 		B88F17B42BA746AC001105F9 /* CenterBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17B32BA746AC001105F9 /* CenterBannerTableViewCell.swift */; };
-		B88F17B72BA74A38001105F9 /* BannerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17B62BA74A38001105F9 /* BannerImage.swift */; };
+		B88F17B72BA74A38001105F9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17B62BA74A38001105F9 /* CardView.swift */; };
 		B88F17B92BA75062001105F9 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17B82BA75062001105F9 /* ProductsTableViewCell.swift */; };
 		B88F17BB2BA7524D001105F9 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BA2BA7524D001105F9 /* ProductsCollectionViewCell.swift */; };
 		B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96012BA620AC000FCEEA /* AppDelegate.swift */; };
@@ -69,7 +69,7 @@
 		B88F17AF2BA74031001105F9 /* SpotlightItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		B88F17B12BA74419001105F9 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		B88F17B32BA746AC001105F9 /* CenterBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterBannerTableViewCell.swift; sourceTree = "<group>"; };
-		B88F17B62BA74A38001105F9 /* BannerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImage.swift; sourceTree = "<group>"; };
+		B88F17B62BA74A38001105F9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B88F17B82BA75062001105F9 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		B88F17BA2BA7524D001105F9 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B8CC95FE2BA620AC000FCEEA /* Internet Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internet Banking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +145,7 @@
 		B88F17AA2BA73751001105F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B88F17B52BA74A24001105F9 /* BannerImage */,
+				B88F17B52BA74A24001105F9 /* CardView */,
 				B88F17AC2BA7375E001105F9 /* Cells */,
 				B88F17AB2BA73758001105F9 /* Header */,
 			);
@@ -172,12 +172,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		B88F17B52BA74A24001105F9 /* BannerImage */ = {
+		B88F17B52BA74A24001105F9 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				B88F17B62BA74A38001105F9 /* BannerImage.swift */,
+				B88F17B62BA74A38001105F9 /* CardView.swift */,
 			);
-			path = BannerImage;
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		B8CC95F52BA620AC000FCEEA = {
@@ -539,7 +539,7 @@
 				B88F17B22BA74419001105F9 /* UIImageExtensions.swift in Sources */,
 				B8CC96352BA62113000FCEEA /* URLSessionClient.swift in Sources */,
 				B8CC963A2BA62D48000FCEEA /* ProductsResponseEntity.swift in Sources */,
-				B88F17B72BA74A38001105F9 /* BannerImage.swift in Sources */,
+				B88F17B72BA74A38001105F9 /* CardView.swift in Sources */,
 				B88F17B02BA74031001105F9 /* SpotlightItemCollectionViewCell.swift in Sources */,
 				B88F17A62BA72B78001105F9 /* ProductsViewController.swift in Sources */,
 				B8CC96522BA65F30000FCEEA /* ProductsInteractor.swift in Sources */,

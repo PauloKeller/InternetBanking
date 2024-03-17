@@ -1,5 +1,5 @@
 //
-//  BannerImage.swift
+//  CardView.swift
 //  Internet Banking
 //
 //  Created by Paulo Keller on 17/03/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BannerImage: UIImageView {
+class CardView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -20,9 +20,9 @@ class BannerImage: UIImageView {
   }
   
   func configureLayout() {
-    self.layer.cornerRadius = 12
-    self.layer.borderWidth = 1
-    self.layer.masksToBounds = true;
-    self.contentMode = .scaleAspectFill
+    self.layer.shadowColor = UIColor.black.cgColor
+    self.layer.shadowRadius = 2
+    self.layer.shadowOpacity = 1
+    self.layer.shadowOffset = .zero
   }
 }

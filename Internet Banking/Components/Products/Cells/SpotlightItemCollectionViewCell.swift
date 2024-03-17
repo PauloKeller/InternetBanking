@@ -7,11 +7,21 @@
 import UIKit
 
 class SpotlightItemCollectionViewCell: UICollectionViewCell {
-  static let indentifier = "SpotlightItemCollectionViewCell"
+  static let identifier = "SpotlightItemCollectionViewCell"
   
-  let bannerImage: BannerImage = {
-    let view = BannerImage(frame: .zero)
+  let cardView: CardView = {
+    let view = CardView(frame: .zero)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
+  let imageView: UIImageView = {
+    let view = UIImageView()
     view.image = UIImage(named: "placeholder")
+    view.layer.shadowRadius = 5
+    view.layer.cornerRadius = 12
+    view.layer.masksToBounds = true;
+    view.contentMode = .scaleAspectFill
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
@@ -29,19 +39,28 @@ class SpotlightItemCollectionViewCell: UICollectionViewCell {
   }
   
   private func configureCell() {
-    contentView.addSubview(bannerImage)
+    contentView.addSubview(cardView)
+    
+    cardView.addSubview(imageView)
     
     NSLayoutConstraint.activate([
-      bannerImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      bannerImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      bannerImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-      bannerImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+      cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
+      cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
+      cardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+      cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+    ])
+    
+    NSLayoutConstraint.activate([
+      imageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+      imageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+      imageView.topAnchor.constraint(equalTo: cardView.topAnchor),
+      imageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
     ])
   }
   
-  func configureData(spotlightItem: SpotlightItemEntity) {
-    if let url = URL(string: spotlightItem.bannerURL) {
-      bannerImage.load(url: url)
+  func configureData(item: SpotlightItemEntity) {
+    if let url = URL(string: item.bannerURL) {
+      imageView.load(url: url)
     }
   }
 }

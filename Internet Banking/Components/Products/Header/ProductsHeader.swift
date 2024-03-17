@@ -20,7 +20,7 @@ final class ProductsHeader: UIView {
   
   let titleLabel: UILabel = {
     let label = UILabel()
-    label.font = .systemFont(ofSize: 24)
+    label.font = .boldSystemFont(ofSize: 24)
     label.text = "Place text here"
     label.translatesAutoresizingMaskIntoConstraints = false
     return label

@@ -13,15 +13,26 @@ class CenterBannerTableViewCell: UITableViewCell {
   let titleLabel: UILabel = {
     let label = UILabel()
     label.text = "digio Cash"
-    label.font = .systemFont(ofSize: 24)
+    label.font = .boldSystemFont(ofSize: 24)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
   
-  let bannerImage: BannerImage = {
-    let banner = BannerImage(frame: .zero)
-    banner.translatesAutoresizingMaskIntoConstraints = false
-    return banner
+  let cardView: CardView = {
+    let view = CardView(frame: .zero)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
+  let bannerImage: UIImageView = {
+    let view = UIImageView()
+    view.image = UIImage(named: "placeholder")
+    view.layer.shadowRadius = 5
+    view.layer.cornerRadius = 12
+    view.layer.masksToBounds = true;
+    view.contentMode = .scaleAspectFill
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
   }()
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -42,9 +53,11 @@ class CenterBannerTableViewCell: UITableViewCell {
     configureCell()
   }
   
-  private func configureCell() {   
+  private func configureCell() {
     contentView.addSubview(titleLabel)
-    contentView.addSubview(bannerImage)
+    contentView.addSubview(cardView)
+    
+    cardView.addSubview(bannerImage)
     
     NSLayoutConstraint.activate([
       titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -53,15 +66,22 @@ class CenterBannerTableViewCell: UITableViewCell {
     ])
     
     NSLayoutConstraint.activate([
-      bannerImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      bannerImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
-      bannerImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
-      bannerImage.heightAnchor.constraint(equalToConstant: 100)
+      cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
+      cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
+      cardView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+      cardView.heightAnchor.constraint(equalToConstant: 100)
+    ])
+    
+    NSLayoutConstraint.activate([
+      bannerImage.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+      bannerImage.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+      bannerImage.topAnchor.constraint(equalTo: cardView.topAnchor),
+      bannerImage.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
     ])
   }
   
-  func configureData(cash: CashEntity) {
-    if let url = URL(string: cash.bannerURL) {
+  func configureData(item: CashEntity) {
+    if let url = URL(string: item.bannerURL) {
       bannerImage.load(url: url)
     }
   }

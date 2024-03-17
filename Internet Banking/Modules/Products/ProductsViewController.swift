@@ -21,11 +21,15 @@ class ProductsViewController: UIViewController {
     let view = UITableView()
     view.register(TopBannerTableViewCell.self, forCellReuseIdentifier: TopBannerTableViewCell.identifier)
     view.register(CenterBannerTableViewCell.self, forCellReuseIdentifier: CenterBannerTableViewCell.identifier)
+    view.register(ProductsTableViewCell.self, forCellReuseIdentifier: ProductsTableViewCell.identifier)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
   
   private func viewConfiguration() {
+    view.backgroundColor = .white
+    
+    tableView.separatorStyle = .none
     tableView.dataSource = self
     tableView.delegate = self
     tableView.estimatedRowHeight = 150
@@ -51,8 +55,6 @@ class ProductsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.backgroundColor = .red
-    
     viewConfiguration()
   }
 }
@@ -71,7 +73,7 @@ extension ProductsViewController: UITableViewDataSource {
     case "1":
       return 200
     case "2":
-      return 100
+      return 180
     case "3":
       return 200
     default:
@@ -96,11 +98,15 @@ extension ProductsViewController: UITableViewDataSource {
         return UITableViewCell()
       }
       
-      cell.configureData(cash: CashEntity(title: "mock title", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/cash_banner.png", description: "mock desc"))
+      cell.configureData(item: CashEntity(title: "mock title", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/cash_banner.png", description: "mock desc"))
       
       return cell
     case "3":
-      return UITableViewCell()
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier) as? ProductsTableViewCell else {
+        return UITableViewCell()
+      }
+      
+      return cell
     default:
       return UITableViewCell()
     }
