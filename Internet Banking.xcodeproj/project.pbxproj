@@ -20,6 +20,7 @@
 		B88F17BB2BA7524D001105F9 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BA2BA7524D001105F9 /* ProductsCollectionViewCell.swift */; };
 		B88F17BD2BA7790A001105F9 /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BC2BA7790A001105F9 /* ProductsPresenter.swift */; };
 		B88F17BF2BA785E7001105F9 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BE2BA785E7001105F9 /* HomeSection.swift */; };
+		B88F17C22BA7A50A001105F9 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17C12BA7A50A001105F9 /* ProductDetailsViewController.swift */; };
 		B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96012BA620AC000FCEEA /* AppDelegate.swift */; };
 		B8CC96042BA620AC000FCEEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96032BA620AC000FCEEA /* SceneDelegate.swift */; };
 		B8CC960B2BA620AD000FCEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CC960A2BA620AD000FCEEA /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		B88F17BA2BA7524D001105F9 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B88F17BC2BA7790A001105F9 /* ProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenter.swift; sourceTree = "<group>"; };
 		B88F17BE2BA785E7001105F9 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		B88F17C12BA7A50A001105F9 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		B8CC95FE2BA620AC000FCEEA /* Internet Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internet Banking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CC96012BA620AC000FCEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8CC96032BA620AC000FCEEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,14 @@
 				B88F17B62BA74A38001105F9 /* CardView.swift */,
 			);
 			path = CardView;
+			sourceTree = "<group>";
+		};
+		B88F17C02BA7A4F3001105F9 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B88F17C12BA7A50A001105F9 /* ProductDetailsViewController.swift */,
+			);
+			path = ProductDetails;
 			sourceTree = "<group>";
 		};
 		B8CC95F52BA620AC000FCEEA = {
@@ -343,6 +353,7 @@
 		B8CC96502BA65F23000FCEEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				B88F17C02BA7A4F3001105F9 /* ProductDetails */,
 				B8CC96512BA65F30000FCEEA /* ProductsInteractor.swift */,
 				B88F17A32BA72B57001105F9 /* ProductsCoordinator.swift */,
 				B88F17A52BA72B78001105F9 /* ProductsViewController.swift */,
@@ -534,6 +545,7 @@
 				B8CC965E2BA66D1F000FCEEA /* NetworkMonitorAdapter.swift in Sources */,
 				B88F17BD2BA7790A001105F9 /* ProductsPresenter.swift in Sources */,
 				B88F17A92BA72E7E001105F9 /* ProductsHeader.swift in Sources */,
+				B88F17C22BA7A50A001105F9 /* ProductDetailsViewController.swift in Sources */,
 				B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */,
 				B88F17AE2BA73777001105F9 /* TopBannerTableViewCell.swift in Sources */,
 				B8CC96412BA62EC1000FCEEA /* CashEntity.swift in Sources */,

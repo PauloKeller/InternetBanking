@@ -21,13 +21,15 @@ protocol ProductsPresenterProtocol {
 }
 
 class ProductsPresenter {
+  let coordinator: ProductsCoordinator
   let interactor: ProductsInteractorProtocol
   weak var delegate: ProductsPresenterDelegate?
   private(set) var responseData: ProductsResponseEntity?
   let homeSections: [HomeSection] = [.spotlight, .cash, .product]
   
-  init(interactor: ProductsInteractorProtocol) {
+  init(interactor: ProductsInteractorProtocol, coordinator: ProductsCoordinator) {
     self.interactor = interactor
+    self.coordinator = coordinator
   }
 }
 
@@ -94,12 +96,10 @@ extension ProductsPresenter: ProductsInteractorDelegate {
   }
   
   func failureFetchProducts() {
-    // TODO: Need to implement
-    print("failed to fetch data")
+    coordinator.showAlert(message: "Something go wrong please try again, and contact the support team")
   }
   
   func noInternetConnection() {
-    // TODO: Need to implement
-    print("no internet")
+    coordinator.showAlert(message: "No internet connection please make sure you have internet enabled")
   }
 }
