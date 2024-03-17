@@ -1,3 +1,7 @@
+# Video
+
+https://github.com/PauloKeller/InternetBanking/assets/21090990/f6c451b2-2338-4567-a539-e4528a6a3fd9
+
 # Arquitetura VIPER
 
 VIPER é a arquitetura que eu escolhi pare esse projeto, é bem comum nos aplicativos iOS usando UIKit é o mais próximo da arquitetura limpa escrita por  [Robert C. Martin (Uncle Bob)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
