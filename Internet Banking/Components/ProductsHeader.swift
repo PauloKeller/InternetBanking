@@ -12,7 +12,8 @@ final class ProductsHeader: UIView {
   let stackView: UIStackView = {
     let view = UIStackView()
     view.axis = .horizontal
-    view.alignment = .leading
+    view.alignment = .fill
+    view.spacing = 12
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
@@ -22,6 +23,14 @@ final class ProductsHeader: UIView {
     label.text = "Place text here"
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
+  }()
+  
+  let imageView: UIImageView = {
+    let view = UIImageView()
+    view.image = UIImage(named: "placeholder")
+    view.contentMode = .scaleAspectFit
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
   }()
   
   override init(frame: CGRect) {
@@ -36,13 +45,24 @@ final class ProductsHeader: UIView {
   
   func configureLayout() {
     self.addSubview(stackView)
-    stackView.addSubview(titleLabel)
     
+    stackView.addArrangedSubview(imageView)
+    stackView.addArrangedSubview(titleLabel)
+    
+    NSLayoutConstraint.activate([
+      imageView.widthAnchor.constraint(equalToConstant: 45),
+    ])
+
     NSLayoutConstraint.activate([
       stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
       stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
       stackView.topAnchor.constraint(equalTo: self.topAnchor),
       stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
     ])
+  }
+  
+  func configureData(title: String, image: UIImage) {
+    self.titleLabel.text = title
+    self.imageView.image = image
   }
 }
