@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductsViewController: UIViewController {
-  let productsData = ["1", "2", "3"]
+  var presenter: ProductsPresenterProtocol!
   
   let header: ProductsHeader = {
     let header = ProductsHeader(frame: .zero)
@@ -56,6 +56,7 @@ class ProductsViewController: UIViewController {
     super.viewDidLoad()
     
     viewConfiguration()
+    presenter.viewDidLoad()
   }
 }
 
@@ -65,20 +66,11 @@ extension ProductsViewController: UITableViewDelegate {
 
 extension ProductsViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return productsData.count
+    return presenter.tableView(tableView, numberOfRowsInSection: section)
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    switch productsData[indexPath.row] {
-    case "1":
-      return 200
-    case "2":
-      return 180
-    case "3":
-      return 200
-    default:
-      return 0
-    }
+    return presenter.tableView(tableView, heightForRowAt: indexPath)
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -86,29 +78,14 @@ extension ProductsViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    switch productsData[indexPath.row] {
-    case "1":
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: TopBannerTableViewCell.identifier) as? TopBannerTableViewCell else {
-        return UITableViewCell()
-      }
-      
-      return cell
-    case "2":
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: CenterBannerTableViewCell.identifier) as? CenterBannerTableViewCell else {
-        return UITableViewCell()
-      }
-      
-      cell.configureData(item: CashEntity(title: "mock title", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/cash_banner.png", description: "mock desc"))
-      
-      return cell
-    case "3":
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier) as? ProductsTableViewCell else {
-        return UITableViewCell()
-      }
-      
-      return cell
-    default:
-      return UITableViewCell()
+    return presenter.tableView(tableView, cellForRowAt: indexPath)
+  }
+}
+
+extension ProductsViewController: ProductsPresenterDelegate {
+  func loadProducts() {
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
     }
   }
 }

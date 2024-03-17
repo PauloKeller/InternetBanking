@@ -18,6 +18,8 @@
 		B88F17B72BA74A38001105F9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17B62BA74A38001105F9 /* CardView.swift */; };
 		B88F17B92BA75062001105F9 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17B82BA75062001105F9 /* ProductsTableViewCell.swift */; };
 		B88F17BB2BA7524D001105F9 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BA2BA7524D001105F9 /* ProductsCollectionViewCell.swift */; };
+		B88F17BD2BA7790A001105F9 /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BC2BA7790A001105F9 /* ProductsPresenter.swift */; };
+		B88F17BF2BA785E7001105F9 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BE2BA785E7001105F9 /* HomeSection.swift */; };
 		B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96012BA620AC000FCEEA /* AppDelegate.swift */; };
 		B8CC96042BA620AC000FCEEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96032BA620AC000FCEEA /* SceneDelegate.swift */; };
 		B8CC960B2BA620AD000FCEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CC960A2BA620AD000FCEEA /* Assets.xcassets */; };
@@ -72,6 +74,8 @@
 		B88F17B62BA74A38001105F9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B88F17B82BA75062001105F9 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		B88F17BA2BA7524D001105F9 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
+		B88F17BC2BA7790A001105F9 /* ProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenter.swift; sourceTree = "<group>"; };
+		B88F17BE2BA785E7001105F9 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		B8CC95FE2BA620AC000FCEEA /* Internet Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internet Banking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CC96012BA620AC000FCEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8CC96032BA620AC000FCEEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				B8CC963C2BA62E93000FCEEA /* SpotlightItemEntity.swift */,
 				B8CC963E2BA62EB2000FCEEA /* ProductItemEntity.swift */,
 				B8CC96402BA62EC1000FCEEA /* CashEntity.swift */,
+				B88F17BE2BA785E7001105F9 /* HomeSection.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				B8CC96512BA65F30000FCEEA /* ProductsInteractor.swift */,
 				B88F17A32BA72B57001105F9 /* ProductsCoordinator.swift */,
 				B88F17A52BA72B78001105F9 /* ProductsViewController.swift */,
+				B88F17BC2BA7790A001105F9 /* ProductsPresenter.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -526,11 +532,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8CC965E2BA66D1F000FCEEA /* NetworkMonitorAdapter.swift in Sources */,
+				B88F17BD2BA7790A001105F9 /* ProductsPresenter.swift in Sources */,
 				B88F17A92BA72E7E001105F9 /* ProductsHeader.swift in Sources */,
 				B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */,
 				B88F17AE2BA73777001105F9 /* TopBannerTableViewCell.swift in Sources */,
 				B8CC96412BA62EC1000FCEEA /* CashEntity.swift in Sources */,
 				B8CC963D2BA62E93000FCEEA /* SpotlightItemEntity.swift in Sources */,
+				B88F17BF2BA785E7001105F9 /* HomeSection.swift in Sources */,
 				B8CC96042BA620AC000FCEEA /* SceneDelegate.swift in Sources */,
 				B88F17B42BA746AC001105F9 /* CenterBannerTableViewCell.swift in Sources */,
 				B8CC96372BA627B8000FCEEA /* ProductsProvider.swift in Sources */,

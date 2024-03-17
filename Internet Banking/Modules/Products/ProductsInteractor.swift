@@ -18,7 +18,7 @@ protocol ProductsInteractorProtocol {
   func fetchProducts()
 }
 
-class ProductsInteractor: ProductsInteractorProtocol {
+class ProductsInteractor {
   let provider: ProductsProviderProtocol
   let monitor: NetworkMonitorAdapterProtocol
   weak var delegate: ProductsInteractorDelegate?
@@ -27,7 +27,9 @@ class ProductsInteractor: ProductsInteractorProtocol {
     self.provider = provider
     self.monitor = monitor
   }
-  
+}
+
+extension ProductsInteractor: ProductsInteractorProtocol {
   func fetchProducts() {
     if monitor.status == .satisfied {
       self.provider.fetchProducts(successCallback: { data in

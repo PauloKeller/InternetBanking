@@ -9,8 +9,7 @@ import UIKit
 
 class TopBannerTableViewCell: UITableViewCell {
   static let identifier = "TopBannerTableViewCell"
-  var items = [SpotlightItemEntity(name: "Mock test", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/recharge_banner.png", description: "Mock desc"),
-               SpotlightItemEntity(name: "Mock test", bannerURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/recharge_banner.png", description: "Mock desc")]
+  var items = [SpotlightItemEntity]()
   
   let collectionView: UICollectionView = {
     let flowLayout = UICollectionViewFlowLayout()

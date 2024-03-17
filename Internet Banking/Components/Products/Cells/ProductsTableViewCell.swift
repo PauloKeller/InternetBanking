@@ -9,12 +9,11 @@ import UIKit
 
 class ProductsTableViewCell: UITableViewCell {
   static let identifier = "ProductsTableViewCell"
-  var items = [ProductItemEntity(name: "name mock", imageURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/xbox_icon.png", description: "desc mock"), ProductItemEntity(name: "name mock", imageURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/xbox_icon.png", description: "desc mock"),
-               ProductItemEntity(name: "name mock", imageURL: "https://s3-sa-east-1.amazonaws.com/digio-exame/xbox_icon.png", description: "desc mock")]
+  var items = [ProductItemEntity]()
   
   let titleLabel: UILabel = {
     let label = UILabel()
-    label.text = "Products"
+    label.text = "Produtos"
     label.font = .boldSystemFont(ofSize: 24)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -70,7 +69,11 @@ class ProductsTableViewCell: UITableViewCell {
     ])
   }
   
-  
+  func configureData(items: [ProductItemEntity]) {
+    self.items = items
+    
+    collectionView.reloadData()
+  }
 }
 
 extension ProductsTableViewCell: UICollectionViewDelegate {
