@@ -1,0 +1,11 @@
+//
+//  EnvironmentVariables.xcconfig
+//  Internet Banking
+//
+//  Created by Paulo Keller on 17/03/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_BASE_URL=https:/$()/7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com

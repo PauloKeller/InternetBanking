@@ -34,8 +34,8 @@ class ProductsViewController: UIViewController {
     tableView.delegate = self
     tableView.estimatedRowHeight = 150
     
-    self.view.addSubview(header)
-    self.view.addSubview(tableView)
+    view.addSubview(header)
+    view.addSubview(tableView)
     
     NSLayoutConstraint.activate([
       header.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10),

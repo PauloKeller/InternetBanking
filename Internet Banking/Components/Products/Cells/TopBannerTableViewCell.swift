@@ -61,11 +61,7 @@ class TopBannerTableViewCell: UITableViewCell {
   }
 }
 
-extension TopBannerTableViewCell: UICollectionViewDelegate {
-  
-}
-
-extension TopBannerTableViewCell: UICollectionViewDataSource {
+extension TopBannerTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count
   }

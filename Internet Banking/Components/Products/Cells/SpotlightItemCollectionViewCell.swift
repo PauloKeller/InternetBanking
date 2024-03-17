@@ -18,7 +18,7 @@ class SpotlightItemCollectionViewCell: UICollectionViewCell {
   let imageView: UIImageView = {
     let view = UIImageView()
     view.image = UIImage(named: "placeholder")
-    view.layer.shadowRadius = 5
+    view.layer.shadowRadius = 4
     view.layer.cornerRadius = 12
     view.layer.masksToBounds = true;
     view.contentMode = .scaleAspectFill

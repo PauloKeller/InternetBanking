@@ -17,7 +17,7 @@ class ProductsCoordinator: CoordinatorProtocol {
     self.navigationController = navigationController
     self.viewController = ProductsViewController()
     
-    let url = URL(string: "https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com")!
+    let url = URL(string: EnvironmentVariables.apiBaseURL)!
     let nwPathMonitor = NWPathMonitor()
     let monitor = NetworkMonitorAdapter(monitor: nwPathMonitor)
     let provider = ProductsProvider(baseURL: url)
@@ -32,9 +32,16 @@ class ProductsCoordinator: CoordinatorProtocol {
     navigationController.pushViewController(viewController, animated: false)
   }
   
-  func showAlert(message: String) {
+  func presentAlert(message: String) {
     let alert = UIAlertController(title: "Ops!", message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
     navigationController.present(alert, animated: true, completion: nil)
+  }
+  
+  func pushProductDetails(item: ProductItemEntity) {
+    let viewController = ProductDetailsViewController()
+    viewController.item = item
+    
+    navigationController.pushViewController(viewController, animated: true)
   }
 }

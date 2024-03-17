@@ -67,12 +67,14 @@ extension ProductsPresenter: ProductsPresenterProtocol {
       if let item = responseData?.cash {
         cell.configureData(item: item)
       }
+      cell.selectionStyle = .none
       
       return cell
     case .product:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier) as? ProductsTableViewCell else {
         return UITableViewCell()
       }
+      cell.delegate = self
       
       if let items = responseData?.products {
         cell.configureData(items: items)
@@ -96,10 +98,17 @@ extension ProductsPresenter: ProductsInteractorDelegate {
   }
   
   func failureFetchProducts() {
-    coordinator.showAlert(message: "Something go wrong please try again, and contact the support team")
+    coordinator.presentAlert(message: "Something go wrong please try again, and contact the support team")
   }
   
   func noInternetConnection() {
-    coordinator.showAlert(message: "No internet connection please make sure you have internet enabled")
+    coordinator.presentAlert(message: "No internet connection please make sure you have internet enabled")
+  }
+}
+
+extension ProductsPresenter: ProductsTableViewCellDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let item = responseData?.products[indexPath.row] else { return }
+    coordinator.pushProductDetails(item: item)
   }
 }

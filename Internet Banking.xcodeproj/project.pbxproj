@@ -21,6 +21,7 @@
 		B88F17BD2BA7790A001105F9 /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BC2BA7790A001105F9 /* ProductsPresenter.swift */; };
 		B88F17BF2BA785E7001105F9 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17BE2BA785E7001105F9 /* HomeSection.swift */; };
 		B88F17C22BA7A50A001105F9 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17C12BA7A50A001105F9 /* ProductDetailsViewController.swift */; };
+		B88F17C62BA7AE74001105F9 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F17C52BA7AE74001105F9 /* EnvironmentVariables.swift */; };
 		B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96012BA620AC000FCEEA /* AppDelegate.swift */; };
 		B8CC96042BA620AC000FCEEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC96032BA620AC000FCEEA /* SceneDelegate.swift */; };
 		B8CC960B2BA620AD000FCEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CC960A2BA620AD000FCEEA /* Assets.xcassets */; };
@@ -78,6 +79,8 @@
 		B88F17BC2BA7790A001105F9 /* ProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenter.swift; sourceTree = "<group>"; };
 		B88F17BE2BA785E7001105F9 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		B88F17C12BA7A50A001105F9 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EnvironmentVariables.xcconfig; sourceTree = "<group>"; };
+		B88F17C52BA7AE74001105F9 /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
 		B8CC95FE2BA620AC000FCEEA /* Internet Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internet Banking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CC96012BA620AC000FCEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8CC96032BA620AC000FCEEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +197,15 @@
 			path = ProductDetails;
 			sourceTree = "<group>";
 		};
+		B88F17C42BA7AD8E001105F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */,
+				B88F17C52BA7AE74001105F9 /* EnvironmentVariables.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B8CC95F52BA620AC000FCEEA = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +229,7 @@
 		B8CC96002BA620AC000FCEEA /* Internet Banking */ = {
 			isa = PBXGroup;
 			children = (
+				B88F17C42BA7AD8E001105F9 /* Resources */,
 				B88F17A72BA72E55001105F9 /* Components */,
 				B88F179E2BA72AE3001105F9 /* Coordinator */,
 				B8CC964F2BA65F16000FCEEA /* Modules */,
@@ -549,6 +562,7 @@
 				B8CC96022BA620AC000FCEEA /* AppDelegate.swift in Sources */,
 				B88F17AE2BA73777001105F9 /* TopBannerTableViewCell.swift in Sources */,
 				B8CC96412BA62EC1000FCEEA /* CashEntity.swift in Sources */,
+				B88F17C62BA7AE74001105F9 /* EnvironmentVariables.swift in Sources */,
 				B8CC963D2BA62E93000FCEEA /* SpotlightItemEntity.swift in Sources */,
 				B88F17BF2BA785E7001105F9 /* HomeSection.swift in Sources */,
 				B8CC96042BA620AC000FCEEA /* SceneDelegate.swift in Sources */,
@@ -622,6 +636,7 @@
 /* Begin XCBuildConfiguration section */
 		B8CC96262BA620AD000FCEEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -685,6 +700,7 @@
 		};
 		B8CC96272BA620AD000FCEEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -741,6 +757,7 @@
 		};
 		B8CC96292BA620AD000FCEEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -768,6 +785,7 @@
 		};
 		B8CC962A2BA620AD000FCEEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -795,6 +813,7 @@
 		};
 		B8CC962C2BA620AD000FCEEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -815,6 +834,7 @@
 		};
 		B8CC962D2BA620AD000FCEEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -835,6 +855,7 @@
 		};
 		B8CC962F2BA620AD000FCEEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -853,6 +874,7 @@
 		};
 		B8CC96302BA620AD000FCEEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B88F17C32BA7AD80001105F9 /* EnvironmentVariables.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

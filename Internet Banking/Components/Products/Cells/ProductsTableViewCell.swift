@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol ProductsTableViewCellDelegate: AnyObject {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+}
+
 class ProductsTableViewCell: UITableViewCell {
   static let identifier = "ProductsTableViewCell"
   var items = [ProductItemEntity]()
+  weak var delegate: ProductsTableViewCellDelegate?
   
   let titleLabel: UILabel = {
     let label = UILabel()
@@ -77,7 +82,9 @@ class ProductsTableViewCell: UITableViewCell {
 }
 
 extension ProductsTableViewCell: UICollectionViewDelegate {
-  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    delegate?.collectionView(collectionView, didSelectItemAt: indexPath)
+  }
 }
 
 extension ProductsTableViewCell: UICollectionViewDataSource {
